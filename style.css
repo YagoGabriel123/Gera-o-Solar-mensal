@@ -1,3 +1,4 @@
+/* Custom styles complementares ao Tailwind */
 body {
     font-family: 'Inter', sans-serif;
 }
@@ -9,27 +10,75 @@ input[type='number']::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-.btn-blue {
-    background-color: #2563eb;
-    color: white;
-    font-weight: bold;
-    padding: 0.75rem 2rem;
-    border-radius: 0.5rem;
-    transition: transform 0.2s;
-}
-.btn-blue:hover {
-    background-color: #1d4ed8;
-    transform: scale(1.05);
-}
-.btn-green {
-    background-color: #16a34a;
-    color: white;
-    font-weight: bold;
-    padding: 0.75rem 2rem;
-    border-radius: 0.5rem;
-    transition: transform 0.2s;
-}
-.btn-green:hover {
-    background-color: #15803d;
-    transform: scale(1.05);
+@media print {
+    @page {
+        size: A4;
+        margin: 1.5cm;
+    }
+    .no-print {
+        display: none !important;
+    }
+    body {
+        background-color: #ffffff;
+        margin: 0;
+        padding: 0;
+        font-size: 10pt;
+    }
+    .container {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    h1, h2, h3 {
+        text-align: center;
+        margin-block: 0.5rem;
+    }
+    h1 { font-size: 16pt; }
+    h2 { font-size: 12pt; }
+    h3 { font-size: 11pt; }
+    p { margin-block: 0.25rem; }
+    .input-grid {
+        gap: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    label {
+        font-size: 9pt;
+        margin-bottom: 0 !important;
+    }
+    #irradiacoes {
+        gap: 4px 8px !important;
+        margin-bottom: 1rem !important;
+    }
+    #irradiacoes > div {
+        padding: 0 !important;
+        border: none !important;
+    }
+    input[type='number'] {
+        border: none !important;
+        background-color: transparent !important;
+        font-weight: 600;
+        color: #000000;
+        padding: 1px !important;
+        box-shadow: none;
+        ring: 0;
+        text-align: center;
+    }
+    .input-grid input[type='number'] {
+        text-align: left;
+        padding-left: 0 !important;
+    }
+    #tabela-resultado {
+        font-size: 9pt;
+        border-collapse: collapse;
+    }
+    #tabela-resultado th, #tabela-resultado td {
+        padding: 2px 4px !important;
+        border: 1px solid #ccc;
+    }
+    #tabela-resultado tfoot td {
+        font-size: 10pt !important;
+    }
 }
